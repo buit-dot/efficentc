@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efficientc - Consultoría en Sistemas de Gestión ISO</title>
+    
+    <!-- Script de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuente Inter de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            '600': '#0277bd', // Un azul corporativo y profesional
+                            '700': '#01579b',
+                        },
+                        'secondary': {
+                            '500': '#546e7a',
+                            '600': '#455a64',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilo base para la fuente */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- ===== Header (Encabezado) ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Nombre de la Empresa -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold text-primary-600">
+                        Efficientc
+                    </a>
+                </div>
+                
+                <!-- Navegación de Escritorio -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Inicio</a>
+                    <a href="#quienes-somos" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Quiénes Somos</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Servicios</a>
+                    <a href="#contacto" class="bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors duration-200 shadow">
+                        Contacto
+                    </a>
+                </div>
+                
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <!-- Icono Hamburguesa -->
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icono Cerrar (X) -->
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Inicio</a>
+                <a href="#quienes-somos" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Quiénes Somos</a>
+                <a href="#servicios" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Servicios</a>
+                <a href="#contacto" class="bg-primary-600 text-white block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary-700 transition-colors duration-200 shadow">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Contenido Principal ===== -->
+    <main>
+
+        <!-- ===== Sección Hero (Inicio) ===== -->
+        <section id="inicio" class="bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+                <div class="text-center">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                        <span class="block xl:inline">Optimice su Gestión con</span>
+                        <span class="block text-primary-600 xl:inline">Efficientc</span>
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto text-lg text-gray-600 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
+                        Expertos en consultoría y auditoría de normas ISO 9001:2015 (Calidad) e ISO 50001 (Energía).
+                    </p>
+                    <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                        <div class="rounded-md shadow">
+                            <a href="#servicios" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+                                Ver Servicios
+                            </a>
+                        </div>
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                            <a href="#contacto" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+                                Contáctenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sección Quiénes Somos ===== -->
+        <section id="quienes-somos" class="py-20 md:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Quiénes Somos</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Su socio estratégico en Calidad y Eficiencia Energética
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                    <!-- Columna de Texto "Quiénes Somos" -->
+                    <div class="space-y-6 text-lg text-gray-600">
+                        <p>
+                            En <strong>Efficientc</strong>, somos un equipo de consultores apasionados por la mejora continua. Nuestra misión es transformar organizaciones a través de la implementación efectiva de Sistemas de Gestión de Calidad (ISO 9001:2015) y Energía (ISO 50001).
+                        </p>
+                        <p>
+                            Entendemos que cada empresa es única. Por eso, no ofrecemos soluciones genéricas, sino que diseñamos estrategias a la medida que se integran con sus procesos existentes, asegurando resultados tangibles, reducción de costos y una ventaja competitiva sostenible.
+                        </p>
+                    </div>
+                    
+                    <!-- Columna de Política y Valores -->
+                    <div class="space-y-8">
+                        <!-- Política de Calidad -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Nuestra Política de Calidad</h3>
+                            <p class="text-lg text-gray-600">
+                                Nos comprometemos a superar las expectativas de nuestros clientes mediante servicios de consultoría de la más alta calidad, promoviendo la mejora continua en sus procesos y en los nuestros, cumpliendo rigurosamente con los requisitos legales y normativos aplicables.
+                            </p>
+                        </div>
+                        
+                        <!-- Valores -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestros Valores</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-lg text-gray-600"><strong>Integridad:</strong> Actuamos con honestidad y transparencia en cada interacción.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-lg text-gray-600"><strong>Excelencia:</strong> Buscamos la máxima calidad en todo lo que hacemos.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-lg text-gray-600"><strong>Compromiso:</strong> Nos dedicamos al éxito de nuestros clientes como si fuera el nuestro.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-lg text-gray-600"><strong>Mejora Continua:</strong> Creemos en el aprendizaje y la adaptación constante.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sección Servicios ===== -->
+        <section id="servicios" class="bg-gray-50 py-20 md:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Servicios Core</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Impulsando su Eficiencia y Calidad
+                    </p>
+                </div>
+
+                <!-- Grid de Servicios -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Servicio 1: Auditorías -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
+                                    <!-- Icono de Auditoría (Heroicons: ClipboardCheck) -->
+                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0zM9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Auditorías ISO 9001:2015 y 50001</h3>
+                            <p class="mt-4 text-lg text-gray-600">
+                                Realizamos auditorías internas (primera parte) y a proveedores (segunda parte) para evaluar la conformidad y eficacia de su sistema de gestión, identificando oportunidades de mejora clave.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2: Implementación -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
+                                    <!-- Icono de Implementación (Heroicons: Cog) -->
+                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0 3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Implementación de Normas ISO</h3>
+                            <p class="mt-4 text-lg text-gray-600">
+                                Le acompañamos en todo el proceso: desde el diagnóstico inicial, diseño documental y capacitación, hasta la auditoría interna y el acompañamiento en la certificación externa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3: Capacitación -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                        <div class="p-8 flex-grow">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
+                                    <!-- Icono de Capacitación (Heroicons: AcademicCap) -->
+                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M15.172 10c1.052 0 2.022.44 2.707 1.155a.998.998 0 01-.013 1.402l-2.021 2.021a2.998 2.998 0 01-4.242 0l-3.21-3.21a.998.998 0 01.013-1.402A3.001 3.001 0 018.828 10h6.344zM12 3a1 1 0 01.993.883L13 4v5.172A5.002 5.002 0 008.828 8H7a1 1 0 01-.993-.883L6 7V4a1 1 0 011-1h5zM5 15.172A5.002 5.002 0 008.828 14h6.344A5.002 5.002 0 0019 15.172V19a1 1 0 01-1 1H6a1 1 0 01-1-1v-3.828z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Desarrollo de Capacitaciones</h3>
+                            <p class="mt-4 text-lg text-gray-600">
+                                Creamos y dictamos cursos y talleres personalizados sobre las normas ISO 9001 y 50001, formación de auditores internos y herramientas de mejora continua para potenciar el talento de su equipo.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sección Contacto ===== -->
+        <section id="contacto" class="py-20 md:py-28 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Contacto</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Iniciemos la conversación
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+                        Complete el formulario y uno de nuestros consultores se pondrá en contacto con usted a la brevedad.
+                    </p>
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <div class="bg-gray-50 rounded-xl shadow-lg p-8 md:p-12">
+                    <!-- 
+                        IMPORTANTE: 
+                        Reemplace "su-email-aqui@dominio.com" en la URL 'action' con su email 
+                        o el ID de formulario que le proporcione Spreeform.io.
+                    -->
+                    <form action="https://spreeform.io/f/su-email-aqui@dominio.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Nombre Completo -->
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                            <input type="text" name="Nombre" id="nombre" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: Juan Pérez">
+                        </div>
+
+                        <!-- Empresa -->
+                        <div>
+                            <label for="empresa" class="block text-sm font-medium text-gray-700">Empresa</label>
+                            <input type="text" name="Empresa" id="empresa" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: Mi Empresa S.A. de C.V.">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="Email" id="email" required autocomplete="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: juan.perez@empresa.com">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                            <input type="tel" name="Telefono" id="telefono" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: +52 55 1234 5678">
+                        </div>
+
+                        <!-- Servicio de Interés -->
+                        <div class="md:col-span-2">
+                            <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio de Interés</Vlabel>
+                            <select id="servicio" name="Servicio de Interés" class="mt-1 block w-full px-4 py-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm">
+                                <option>Seleccione un servicio</option>
+                                <option value="Auditorías ISO">Auditorías ISO 9001:2015 y 50001</option>
+                                <option value="Implementación ISO">Implementación de Normas ISO</option>
+                                <option value="Capacitación">Desarrollo de Capacitaciones</option>
+                                <option value="Otro">Consulta General / Otro</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Mensaje -->
+                        <div class="md:col-span-2">
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                            <textarea id="mensaje" name="Mensaje" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Describa brevemente sus necesidades..."></textarea>
+                        </div>
+                        
+                        <!-- Botón de Enviar -->
+                        <div class="md:col-span-2 text-right">
+                            <button type="submit" class="w-full md:w-auto inline-flex justify-center py-3 px-10 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 transition-colors duration-200">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer (Pie de Página) ===== -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Columna 1: Logo y Copyright -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Efficientc</h3>
+                    <p class="mt-2 text-base text-gray-400">
+                        Consultoría en Sistemas de Gestión ISO 9001:2015 & 50001.
+                    </p>
+                </div>
+                
+                <!-- Columna 2: Navegación Rápida -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-200 uppercase tracking-wider">Navegación</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#inicio" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Inicio</a></li>
+                        <li><a href="#quienes-somos" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Servicios</a></li>
+                        <li><a href="#contacto" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto Rápido -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-200 uppercase tracking-wider">Contacto</h4>
+                    <ul class="mt-4 space-y-2 text-base text-gray-400">
+                        <li><a href="mailto:info@efficentc.com" class="hover:text-white transition-colors duration-200">info@efficentc.com</a></li>
+                        <li>Tampico, Tamaulipas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Barra de Copyright Inferior -->
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+                <p class="text-base text-gray-400">&copy; 2025 Efficientc. Todos los derechos reservados.</p>
+                <p class="text-base text-gray-400 mt-2">
+                    Desarrollado por <a href="https://www.thelavinagency.com.mx" target="_blank" rel="noopener noreferrer" class="hover:text-white underline transition-colors duration-200">TLA</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ===== JavaScript para Menú Móvil ===== -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
+
+        // Cierra el menú móvil cuando se hace clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
