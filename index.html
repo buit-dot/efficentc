@@ -16,6 +16,7 @@
     <!-- Configuración personalizada de Tailwind -->
     <script>
         tailwind.config = {
+            darkMode: 'class', // Habilitar modo oscuro
             theme: {
                 extend: {
                     fontFamily: {
@@ -45,10 +46,10 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
     <!-- ===== Header (Encabezado) ===== -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50 dark:bg-gray-800 dark:border-b dark:border-gray-700">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo / Nombre de la Empresa -->
@@ -60,9 +61,23 @@
                 
                 <!-- Navegación de Escritorio -->
                 <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#inicio" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Inicio</a>
-                    <a href="#quienes-somos" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Quiénes Somos</a>
-                    <a href="#servicios" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Servicios</a>
+                    <a href="#inicio" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Inicio</a>
+                    <a href="#quienes-somos" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Quiénes Somos</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Servicios</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button type="button" class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none">
+                        <span class="sr-only">Toggle dark mode</span>
+                        <!-- Sun Icon -->
+                        <svg class="theme-toggle-light-icon h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M4.04 19.96l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M4.04 4.04l-.707-.707" />
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg class="theme-toggle-dark-icon h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+
                     <a href="#contacto" class="bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors duration-200 shadow">
                         Contacto
                     </a>
@@ -70,7 +85,7 @@
                 
                 <!-- Botón de Menú Móvil -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600" aria-controls="mobile-menu" aria-expanded="false">
+                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Abrir menú principal</span>
                         <!-- Icono Hamburguesa -->
                         <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -86,11 +101,27 @@
         </nav>
 
         <!-- Menú Móvil -->
-        <div class="hidden md:hidden" id="mobile-menu">
+        <div class="hidden md:hidden bg-white dark:bg-gray-800" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#inicio" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Inicio</a>
-                <a href="#quienes-somos" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Quiénes Somos</a>
-                <a href="#servicios" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Servicios</a>
+                <a href="#inicio" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Inicio</a>
+                <a href="#quienes-somos" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Quiénes Somos</a>
+                <a href="#servicios" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Servicios</a>
+                
+                <!-- Dark Mode Toggle Mobile -->
+                <button type="button" class="theme-toggle-btn w-full flex items-center justify-between text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700">
+                    <span>
+                        Modo Oscuro
+                    </span>
+                    <span class="relative">
+                        <svg class="theme-toggle-light-icon h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M4.04 19.96l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M4.04 4.04l-.707-.707" />
+                        </svg>
+                        <svg class="theme-toggle-dark-icon h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </span>
+                </button>
+
                 <a href="#contacto" class="bg-primary-600 text-white block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary-700 transition-colors duration-200 shadow">Contacto</a>
             </div>
         </div>
@@ -100,14 +131,14 @@
     <main>
 
         <!-- ===== Sección Hero (Inicio) ===== -->
-        <section id="inicio" class="bg-gray-50">
+        <section id="inicio" class="bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                 <div class="text-center">
-                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl dark:text-white">
                         <span class="block xl:inline">Optimice su Gestión con</span>
                         <span class="block text-primary-600 xl:inline">Efficientc</span>
                     </h1>
-                    <p class="mt-3 max-w-md mx-auto text-lg text-gray-600 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
+                    <p class="mt-3 max-w-md mx-auto text-lg text-gray-600 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl dark:text-gray-300">
                         Expertos en consultoría y auditoría de normas ISO 9001:2015 (Calidad) e ISO 50001 (Energía).
                     </p>
                     <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
@@ -117,7 +148,7 @@
                             </a>
                         </div>
                         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                            <a href="#contacto" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-colors duration-200">
+                            <a href="#contacto" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-colors duration-200 dark:bg-gray-100 dark:text-primary-700 dark:hover:bg-gray-200">
                                 Contáctenos
                             </a>
                         </div>
@@ -131,14 +162,14 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Quiénes Somos</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                         Su socio estratégico en Calidad y Eficiencia Energética
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <!-- Columna de Texto "Quiénes Somos" -->
-                    <div class="space-y-6 text-lg text-gray-600">
+                    <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                         <p>
                             En <strong>Efficientc</strong>, somos un equipo de consultores apasionados por la mejora continua. Nuestra misión es transformar organizaciones a través de la implementación efectiva de Sistemas de Gestión de Calidad (ISO 9001:2015) y Energía (ISO 50001).
                         </p>
@@ -151,15 +182,15 @@
                     <div class="space-y-8">
                         <!-- Política de Calidad -->
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Nuestra Política de Calidad</h3>
-                            <p class="text-lg text-gray-600">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3 dark:text-gray-100">Nuestra Política de Calidad</h3>
+                            <p class="text-lg text-gray-600 dark:text-gray-300">
                                 Nos comprometemos a superar las expectativas de nuestros clientes mediante servicios de consultoría de la más alta calidad, promoviendo la mejora continua en sus procesos y en los nuestros, cumpliendo rigurosamente con los requisitos legales y normativos aplicables.
                             </p>
                         </div>
                         
                         <!-- Valores -->
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Nuestros Valores</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 dark:text-gray-100">Nuestros Valores</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0">
@@ -167,7 +198,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p class="ml-3 text-lg text-gray-600"><strong>Integridad:</strong> Actuamos con honestidad y transparencia en cada interacción.</p>
+                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Integridad:</strong> Actuamos con honestidad y transparencia en cada interacción.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0">
@@ -175,7 +206,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p class="ml-3 text-lg text-gray-600"><strong>Excelencia:</strong> Buscamos la máxima calidad en todo lo que hacemos.</p>
+                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Excelencia:</strong> Buscamos la máxima calidad en todo lo que hacemos.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0">
@@ -183,7 +214,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p class="ml-3 text-lg text-gray-600"><strong>Compromiso:</strong> Nos dedicamos al éxito de nuestros clientes como si fuera el nuestro.</p>
+                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Compromiso:</strong> Nos dedicamos al éxito de nuestros clientes como si fuera el nuestro.</p>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0">
@@ -191,7 +222,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p class="ml-3 text-lg text-gray-600"><strong>Mejora Continua:</strong> Creemos en el aprendizaje y la adaptación constante.</p>
+                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Mejora Continua:</strong> Creemos en el aprendizaje y la adaptación constante.</p>
                                 </li>
                             </ul>
                         </div>
@@ -201,11 +232,11 @@
         </section>
 
         <!-- ===== Sección Servicios ===== -->
-        <section id="servicios" class="bg-gray-50 py-20 md:py-28">
+        <section id="servicios" class="bg-gray-50 py-20 md:py-28 dark:bg-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Servicios Core</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                         Impulsando su Eficiencia y Calidad
                     </p>
                 </div>
@@ -214,7 +245,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <!-- Servicio 1: Auditorías -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
@@ -226,15 +257,15 @@
                                     </svg>
                                 </span>
                             </div>
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Auditorías ISO 9001:2015 y 50001</h3>
-                            <p class="mt-4 text-lg text-gray-600">
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-gray-100">Auditorías ISO 9001:2015 y 50001</h3>
+                            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
                                 Realizamos auditorías internas (primera parte) y a proveedores (segunda parte) para evaluar la conformidad y eficacia de su sistema de gestión, identificando oportunidades de mejora clave.
                             </p>
                         </div>
                     </div>
 
                     <!-- Servicio 2: Implementación -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
@@ -245,15 +276,15 @@
                                     </svg>
                                 </span>
                             </div>
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Implementación de Normas ISO</h3>
-                            <p class="mt-4 text-lg text-gray-600">
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-gray-100">Implementación de Normas ISO</h3>
+                            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
                                 Le acompañamos en todo el proceso: desde el diagnóstico inicial, diseño documental y capacitación, hasta la auditoría interna y el acompañamiento en la certificación externa.
                             </p>
                         </div>
                     </div>
 
                     <!-- Servicio 3: Capacitación -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
@@ -263,8 +294,8 @@
                                     </svg>
                                 </span>
                             </div>
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900">Desarrollo de Capacitaciones</h3>
-                            <p class="mt-4 text-lg text-gray-600">
+                            <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-gray-100">Desarrollo de Capacitaciones</h3>
+                            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
                                 Creamos y dictamos cursos y talleres personalizados sobre las normas ISO 9001 y 50001, formación de auditores internos y herramientas de mejora continua para potenciar el talento de su equipo.
                             </p>
                         </div>
@@ -275,20 +306,20 @@
         </section>
 
         <!-- ===== Sección Contacto ===== -->
-        <section id="contacto" class="py-20 md:py-28 bg-white">
+        <section id="contacto" class="py-20 md:py-28 bg-white dark:bg-gray-800/50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Contacto</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
                         Iniciemos la conversación
                     </p>
-                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
                         Complete el formulario y uno de nuestros consultores se pondrá en contacto con usted a la brevedad.
                     </p>
                 </div>
 
                 <!-- Formulario de Contacto -->
-                <div class="bg-gray-50 rounded-xl shadow-lg p-8 md:p-12">
+                <div class="bg-gray-50 rounded-xl shadow-lg p-8 md:p-12 dark:bg-gray-800">
                     <!-- 
                         IMPORTANTE: 
                         Reemplace "su-email-aqui@dominio.com" en la URL 'action' con su email 
@@ -298,32 +329,32 @@
                         
                         <!-- Nombre Completo -->
                         <div>
-                            <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-                            <input type="text" name="Nombre" id="nombre" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: Juan Pérez">
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre Completo</label>
+                            <input type="text" name="Nombre" id="nombre" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: Juan Pérez">
                         </div>
 
                         <!-- Empresa -->
                         <div>
-                            <label for="empresa" class="block text-sm font-medium text-gray-700">Empresa</label>
-                            <input type="text" name="Empresa" id="empresa" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: Mi Empresa S.A. de C.V.">
+                            <label for="empresa" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Empresa</label>
+                            <input type="text" name="Empresa" id="empresa" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: Mi Empresa S.A. de C.V.">
                         </div>
 
                         <!-- Email -->
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" name="Email" id="email" required autocomplete="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: juan.perez@empresa.com">
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                            <input type="email" name="Email" id="email" required autocomplete="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: juan.perez@empresa.com">
                         </div>
 
                         <!-- Teléfono -->
                         <div>
-                            <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
-                            <input type="tel" name="Telefono" id="telefono" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Ej: +52 55 1234 5678">
+                            <label for="telefono" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Teléfono</label>
+                            <input type="tel" name="Telefono" id="telefono" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: +52 55 1234 5678">
                         </div>
 
                         <!-- Servicio de Interés -->
                         <div class="md:col-span-2">
-                            <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio de Interés</Vlabel>
-                            <select id="servicio" name="Servicio de Interés" class="mt-1 block w-full px-4 py-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm">
+                            <label for="servicio" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Servicio de Interés</Vlabel>
+                            <select id="servicio" name="Servicio de Interés" class="mt-1 block w-full px-4 py-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500">
                                 <option>Seleccione un servicio</option>
                                 <option value="Auditorías ISO">Auditorías ISO 9001:2015 y 50001</option>
                                 <option value="Implementación ISO">Implementación de Normas ISO</option>
@@ -334,8 +365,8 @@
                         
                         <!-- Mensaje -->
                         <div class="md:col-span-2">
-                            <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                            <textarea id="mensaje" name="Mensaje" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm" placeholder="Describa brevemente sus necesidades..."></textarea>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
+                            <textarea id="mensaje" name="Mensaje" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Describa brevemente sus necesidades..."></textarea>
                         </div>
                         
                         <!-- Botón de Enviar -->
@@ -419,6 +450,58 @@
                 menuIconClose.classList.add('hidden');
             });
         });
+    </script>
+
+    <!-- ===== Dark Mode Toggle Script ===== -->
+    <script>
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+        const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
+        const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
+        const htmlEl = document.documentElement;
+
+        // Function to update icon visibility
+        function updateIcons(isDarkMode) {
+            lightIcons.forEach(icon => {
+                isDarkMode ? icon.classList.add('hidden') : icon.classList.remove('hidden');
+            });
+            darkIcons.forEach(icon => {
+                isDarkMode ? icon.classList.remove('hidden') : icon.classList.add('hidden');
+            });
+        }
+
+        // Function to toggle theme
+        function toggleTheme() {
+            const isDarkMode = htmlEl.classList.toggle('dark');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateIcons(isDarkMode);
+        }
+
+        // Add click listener to all toggle buttons
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', toggleTheme);
+        });
+
+        // Function to initialize theme on page load
+        function initTheme() {
+            const storedTheme = localStorage.getItem('theme');
+            let isDarkMode;
+
+            if (storedTheme) {
+                isDarkMode = (storedTheme === 'dark');
+            } else {
+                isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+
+            if (isDarkMode) {
+                htmlEl.classList.add('dark');
+            } else {
+                htmlEl.classList.remove('dark');
+            }
+            updateIcons(isDarkMode);
+        }
+
+        // Run theme initialization on page load
+        initTheme();
     </script>
 
 </body>
