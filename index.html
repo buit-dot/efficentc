@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efficientc - Consultoría en Sistemas de Gestión ISO</title>
     
-    <!-- Script de Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fuente Inter de Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Fuente Inter de Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Configuración personalizada de Tailwind -->
-    <script>
+    <!-- Configuración personalizada de Tailwind --><script>
         tailwind.config = {
             darkMode: 'class', // Habilitar modo oscuro
             theme: {
@@ -57,32 +54,27 @@
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
-    <!-- ===== Header (Encabezado) ===== -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 dark:bg-gray-800 dark:border-b dark:border-gray-700">
+    <!-- ===== Header (Encabezado) ===== --><header class="bg-white shadow-sm sticky top-0 z-50 dark:bg-gray-800 dark:border-b dark:border-gray-700">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo / Nombre de la Empresa -->
-                <div class="flex-shrink-0">
+                <!-- Logo / Nombre de la Empresa --><div class="flex-shrink-0">
                     <a href="#" class="text-3xl font-bold text-primary-600">
                         Efficientc
                     </a>
                 </div>
                 
-                <!-- Navegación de Escritorio -->
-                <div class="hidden md:flex md:items-center md:space-x-8">
+                <!-- Navegación de Escritorio --><div class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#inicio" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Inicio</a>
                     <a href="#quienes-somos" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Quiénes Somos</a>
+                    <a href="#valores" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Valores</a>
                     <a href="#servicios" class="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-primary-500">Servicios</a>
                     
-                    <!-- Dark Mode Toggle -->
-                    <button type="button" class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none">
+                    <!-- Dark Mode Toggle --><button type="button" class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none">
                         <span class="sr-only">Toggle dark mode</span>
-                        <!-- Sun Icon -->
-                        <svg class="theme-toggle-light-icon h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <!-- Sun Icon --><svg class="theme-toggle-light-icon h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M4.04 19.96l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M4.04 4.04l-.707-.707" />
                         </svg>
-                        <!-- Moon Icon -->
-                        <svg class="theme-toggle-dark-icon h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <!-- Moon Icon --><svg class="theme-toggle-dark-icon h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
@@ -92,16 +84,13 @@
                     </a>
                 </div>
                 
-                <!-- Botón de Menú Móvil -->
-                <div class="md:hidden flex items-center">
+                <!-- Botón de Menú Móvil --><div class="md:hidden flex items-center">
                     <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Abrir menú principal</span>
-                        <!-- Icono Hamburguesa -->
-                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <!-- Icono Hamburguesa --><svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        <!-- Icono Cerrar (X) -->
-                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <!-- Icono Cerrar (X) --><svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -109,15 +98,14 @@
             </div>
         </nav>
 
-        <!-- Menú Móvil -->
-        <div class="hidden md:hidden bg-white dark:bg-gray-800" id="mobile-menu">
+        <!-- Menú Móvil --><div class="hidden md:hidden bg-white dark:bg-gray-800" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#inicio" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Inicio</a>
                 <a href="#quienes-somos" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Quiénes Somos</a>
+                <a href="#valores" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Valores</a>
                 <a href="#servicios" class="text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-primary-500">Servicios</a>
                 
-                <!-- Dark Mode Toggle Mobile -->
-                <button type="button" class="theme-toggle-btn w-full flex items-center justify-between text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700">
+                <!-- Dark Mode Toggle Mobile --><button type="button" class="theme-toggle-btn w-full flex items-center justify-between text-gray-600 hover:bg-gray-100 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-700">
                     <span>
                         Modo Oscuro
                     </span>
@@ -136,11 +124,9 @@
         </div>
     </header>
 
-    <!-- ===== Contenido Principal ===== -->
-    <main>
+    <!-- ===== Contenido Principal ===== --><main>
 
-        <!-- ===== Sección Hero (Inicio) ===== -->
-        <section id="inicio" class="bg-gray-50 dark:bg-gray-800/50">
+        <!-- ===== Sección Hero (Inicio) ===== --><section id="inicio" class="bg-gray-50 dark:bg-gray-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                 <div class="text-center">
                     <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl dark:text-white">
@@ -166,8 +152,7 @@
             </div>
         </section>
 
-        <!-- ===== Sección Quiénes Somos ===== -->
-        <section id="quienes-somos" class="py-20 md:py-28">
+        <!-- ===== Sección Quiénes Somos ===== --><section id="quienes-somos" class="py-20 md:py-28 bg-white dark:bg-gray-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Quiénes Somos</h2>
@@ -177,8 +162,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <!-- Columna de Texto "Quiénes Somos" -->
-                    <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+                    <!-- Columna de Texto "Quiénes Somos" --><div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                         <p>
                             En <strong>Efficientc</strong>, somos un equipo de consultores apasionados por la mejora continua. Nuestra misión es transformar organizaciones a través de la implementación efectiva de Sistemas de Gestión de Calidad (ISO 9001:2015) y Energía (ISO 50001).
                         </p>
@@ -187,10 +171,7 @@
                         </p>
                     </div>
                     
-                    <!-- Columna de Política y Valores -->
-                    <div class="space-y-8">
-                        <!-- Política de Calidad -->
-                        <div>
+                    <!-- Columna de Política --><div class="space-y-8"> <!-- Eliminado flex flex-col items-center --><!-- Política de Calidad --><div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-3 dark:text-gray-100">Nuestra Política de Calidad</h3>
                             <p class="text-lg text-gray-600 dark:text-gray-300">
                                 En Efficientc, nos comprometemos a ofrecer soluciones integrales en eficiencia energética que contribuyan al uso responsable de los recursos, la reducción del consumo energético y la sostenibilidad ambiental de nuestros clientes.
@@ -205,51 +186,80 @@
                             </div>
                         </div>
                         
-                        <!-- Valores -->
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4 dark:text-gray-100">Nuestros Valores</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <div class="flex-shrink-0">
-                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Integridad:</strong> Actuamos con honestidad y transparencia en cada interacción.</p>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="flex-shrink-0">
-                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Excelencia:</strong> Buscamos la máxima calidad en todo lo que hacemos.</p>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="flex-shrink-0">
-                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Compromiso:</strong> Nos dedicamos al éxito de nuestros clientes como si fuera el nuestro.</p>
-                                </li>
-                                <li class="flex items-start">
-                                    <div class="flex-shrink-0">
-                                        <svg class="h-6 w-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <p class="ml-3 text-lg text-gray-600 dark:text-gray-300"><strong>Mejora Continua:</strong> Creemos en el aprendizaje y la adaptación constante.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                        <!-- SECCIÓN DE VALORES ELIMINADA DE AQUÍ --></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== Sección Servicios ===== -->
-        <section id="servicios" class="bg-gray-50 py-20 md:py-28 dark:bg-gray-900">
+        <!-- ===== NUEVA Sección Valores ===== --><section id="valores" class="bg-gray-50 py-20 md:py-28 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Nuestros Valores</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                        Los Pilares de Nuestro Compromiso
+                    </p>
+                </div>
+
+                <!-- Grid de 4 columnas para los valores -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                    <!-- Valor 1: Integridad -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="flex-shrink-0">
+                            <span class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary-600/10 dark:bg-primary-600/20">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-100">Integridad</h3>
+                        <p class="mt-2 text-base text-gray-600 dark:text-gray-300">Actuamos con honestidad y transparencia en cada interacción.</p>
+                    </div>
+
+                    <!-- Valor 2: Excelencia -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="flex-shrink-0">
+                            <span class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary-600/10 dark:bg-primary-600/20">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-100">Excelencia</h3>
+                        <p class="mt-2 text-base text-gray-600 dark:text-gray-300">Buscamos la máxima calidad en todo lo que hacemos.</p>
+                    </div>
+
+                    <!-- Valor 3: Compromiso -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="flex-shrink-0">
+                            <span class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary-600/10 dark:bg-primary-600/20">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-100">Compromiso</h3>
+                        <p class="mt-2 text-base text-gray-600 dark:text-gray-300">Nos dedicamos al éxito de nuestros clientes como si fuera el nuestro.</p>
+                    </div>
+
+                    <!-- Valor 4: Mejora Continua -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="flex-shrink-0">
+                            <span class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary-600/10 dark:bg-primary-600/20">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-100">Mejora Continua</h3>
+                        <p class="mt-2 text-base text-gray-600 dark:text-gray-300">Creemos en el aprendizaje y la adaptación constante.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sección Servicios ===== --><section id="servicios" class="bg-white py-20 md:py-28 dark:bg-gray-800/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Servicios Core</h2>
@@ -258,16 +268,13 @@
                     </p>
                 </div>
 
-                <!-- Grid de Servicios -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Grid de Servicios --><div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <!-- Servicio 1: Auditorías -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
+                    <!-- Servicio 1: Auditorías --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
-                                    <!-- Icono de Auditoría (Heroicons: ClipboardCheck) -->
-                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <!-- Icono de Auditoría (Heroicons: ClipboardCheck) --><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0zM9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -281,14 +288,12 @@
                         </div>
                     </div>
 
-                    <!-- Servicio 2: Implementación -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
+                    <!-- Servicio 2: Implementación --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
-                                    <!-- Icono de Implementación (Heroicons: Cog) -->
-                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0 3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <!-- Icono de Implementación (Heroicons: Cog) --><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924-1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0 3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </span>
@@ -300,13 +305,11 @@
                         </div>
                     </div>
 
-                    <!-- Servicio 3: Capacitación -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
+                    <!-- Servicio 3: Capacitación --><div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col dark:bg-gray-800">
                         <div class="p-8 flex-grow">
                             <div class="flex-shrink-0">
                                 <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600 text-white">
-                                    <!-- Icono de Capacitación (Heroicons: AcademicCap) -->
-                                    <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <!-- Icono de Capacitación (Heroicons: AcademicCap) --><svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M15.172 10c1.052 0 2.022.44 2.707 1.155a.998.998 0 01-.013 1.402l-2.021 2.021a2.998 2.998 0 01-4.242 0l-3.21-3.21a.998.998 0 01.013-1.402A3.001 3.001 0 018.828 10h6.344zM12 3a1 1 0 01.993.883L13 4v5.172A5.002 5.002 0 008.828 8H7a1 1 0 01-.993-.883L6 7V4a1 1 0 011-1h5zM5 15.172A5.002 5.002 0 008.828 14h6.344A5.002 5.002 0 0019 15.172V19a1 1 0 01-1 1H6a1 1 0 01-1-1v-3.828z" clip-rule="evenodd" />
                                     </svg>
                                 </span>
@@ -322,8 +325,7 @@
             </div>
         </section>
 
-        <!-- ===== Sección Contacto ===== -->
-        <section id="contacto" class="py-20 md:py-28 bg-white dark:bg-gray-800/50">
+        <!-- ===== Sección Contacto ===== --><section id="contacto" class="py-20 md:py-28 bg-gray-50 dark:bg-gray-900">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Contacto</h2>
@@ -335,41 +337,34 @@
                     </p>
                 </div>
 
-                <!-- Formulario de Contacto -->
-                <div class="bg-gray-50 rounded-xl shadow-lg p-8 md:p-12 dark:bg-gray-800">
+                <!-- Formulario de Contacto --><div class="bg-white rounded-xl shadow-lg p-8 md:p-12 dark:bg-gray-800">
                     <!-- 
                         IMPORTANTE: 
                         Reemplace "su-email-aqui@dominio.com" en la URL 'action' con su email 
                         o el ID de formulario que le proporcione Spreeform.io.
-                    -->
-                    <form action="https://formspree.io/f/xvgvkooz" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    --><form action="https://formspree.io/f/xvgvkooz" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         
-                        <!-- Nombre Completo -->
-                        <div>
+                        <!-- Nombre Completo --><div>
                             <label for="nombre" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre Completo</label>
                             <input type="text" name="Nombre" id="nombre" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: Juan Pérez">
                         </div>
 
-                        <!-- Empresa -->
-                        <div>
+                        <!-- Empresa --><div>
                             <label for="empresa" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Empresa</label>
                             <input type="text" name="Empresa" id="empresa" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: Mi Empresa S.A. de C.V.">
                         </div>
 
-                        <!-- Email -->
-                        <div>
+                        <!-- Email --><div>
                             <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
                             <input type="email" name="Email" id="email" required autocomplete="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: juan.perez@empresa.com">
                         </div>
 
-                        <!-- Teléfono -->
-                        <div>
+                        <!-- Teléfono --><div>
                             <label for="telefono" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Teléfono</label>
                             <input type="tel" name="Telefono" id="telefono" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Ej: +52 55 1234 5678">
                         </div>
 
-                        <!-- Servicio de Interés -->
-                        <div class="md:col-span-2">
+                        <!-- Servicio de Interés --><div class="md:col-span-2">
                             <label for="servicio" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Servicio de Interés</Vlabel>
                             <select id="servicio" name="Servicio de Interés" class="mt-1 block w-full px-4 py-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500">
                                 <option>Seleccione un servicio</option>
@@ -380,14 +375,12 @@
                             </select>
                         </div>
                         
-                        <!-- Mensaje -->
-                        <div class="md:col-span-2">
-                            <label for="mensaje" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
+                        <!-- Mensaje --><div class="md:col-span-2">
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</LabeL>
                             <textarea id="mensaje" name="Mensaje" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Describa brevemente sus necesidades..."></textarea>
                         </div>
                         
-                        <!-- Botón de Enviar -->
-                        <div class="md:col-span-2 text-right">
+                        <!-- Botón de Enviar --><div class="md:col-span-2 text-right">
                             <button type="submit" class="w-full md:w-auto inline-flex justify-center py-3 px-10 border border-transparent shadow-sm text-base font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 transition-colors duration-200">
                                 Enviar Mensaje
                             </button>
@@ -399,31 +392,28 @@
 
     </main>
 
-    <!-- ===== Footer (Pie de Página) ===== -->
-    <footer class="bg-gray-800 text-gray-300">
+    <!-- ===== Footer (Pie de Página) ===== --><footer class="bg-gray-800 text-gray-300">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Columna 1: Logo y Copyright -->
-                <div>
+                <!-- Columna 1: Logo y Copyright --><div>
                     <h3 class="text-2xl font-bold text-white">Efficientc</h3>
                     <p class="mt-2 text-base text-gray-400">
                         Consultoría en Sistemas de Gestión ISO 9001:2015 & 50001.
                     </p>
                 </div>
                 
-                <!-- Columna 2: Navegación Rápida -->
-                <div>
+                <!-- Columna 2: Navegación Rápida --><div>
                     <h4 class="text-lg font-semibold text-gray-200 uppercase tracking-wider">Navegación</h4>
                     <ul class="mt-4 space-y-2">
                         <li><a href="#inicio" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Inicio</a></li>
                         <li><a href="#quienes-somos" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Quiénes Somos</a></li>
+                        <li><a href="#valores" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Valores</a></li>
                         <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Servicios</a></li>
                         <li><a href="#contacto" class="text-base text-gray-400 hover:text-white transition-colors duration-200">Contacto</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contacto Rápido -->
-                <div>
+                <!-- Columna 3: Contacto Rápido --><div>
                     <h4 class="text-lg font-semibold text-gray-200 uppercase tracking-wider">Contacto</h4>
                     <ul class="mt-4 space-y-2 text-base text-gray-400">
                         <li><a href="mailto:info@efficentc.com" class="hover:text-white transition-colors duration-200">info@efficentc.com</a></li>
@@ -432,8 +422,7 @@
                 </div>
             </div>
             
-            <!-- Barra de Copyright Inferior -->
-            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+            <!-- Barra de Copyright Inferior --><div class="mt-8 border-t border-gray-700 pt-8 text-center">
                 <p class="text-base text-gray-400">&copy; 2025 Efficientc. Todos los derechos reservados.</p>
                 <p class="text-base text-gray-400 mt-2">
                     Desarrollado por <a href="https://www.thelavinagency.com.mx" target="_blank" rel="noopener noreferrer" class="hover:text-white underline transition-colors duration-200">TLA</a>
@@ -443,8 +432,7 @@
     </footer>
 
 
-    <!-- ===== JavaScript para Menú Móvil ===== -->
-    <script>
+    <!-- ===== JavaScript para Menú Móvil ===== --><script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIconOpen = document.getElementById('menu-icon-open');
@@ -469,8 +457,7 @@
         });
     </script>
 
-    <!-- ===== Dark Mode Toggle Script ===== -->
-    <script>
+    <!-- ===== Dark Mode Toggle Script ===== --><script>
         const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
         const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
         const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
@@ -523,4 +510,3 @@
 
 </body>
 </html>
-
