@@ -44,6 +44,15 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        
+        /* Mejora de Core Web Vitals:
+          Indica al navegador que omita el renderizado de secciones fuera de pantalla,
+          acelerando la carga inicial. 
+        */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 800px; /* Una altura estimada para evitar saltos de layout */
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
